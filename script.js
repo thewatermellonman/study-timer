@@ -7,7 +7,7 @@ const startButton = document.querySelector("#startButton");
 const pauseButton = document.querySelector("#pauseButton");
 const resetButton = document.querySelector("#resetButton");
 
-funtion updateTimer() {
+function updateTimer() {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const remainingSeconds = seconds % 60;
