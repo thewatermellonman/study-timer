@@ -8,8 +8,8 @@
     <main class="app">
         <h1>Study Timer</h1>
         <p class="subtitle">cozy study sessions</p>
-        <div class="subhectSelect">
-            <label for="subject">What are you studying</option>
+        <div class="subjectSelect">
+            <label for="subjectSelect">What are you studying</label>
             <select id="subjectSelect">
                 <option value="">choose your subject</option>
             </select>
@@ -25,6 +25,14 @@
             <button id="pauseButton">Pause</button>
             <button id="resetButton">Reset</button>
         </div>
+
+        <section class="leaderboard">
+            <h2>Leaderboard</h2>
+            <div id="leaderboardList"></div>
+                <p>No study sessions yet!</p>
+            </div>
+        </section>
+
     </main>
     <script src="script.js"></script>
 </body>

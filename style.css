@@ -4,27 +4,46 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f8eee8;
-    color: #5b4038;
+   
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #fff8f5 0px,
+            #fff8f5 28px,
+            #f7dfe3 29px,
+            #fff8f5 30px
+        );
+
+    color: #6b4a4a;
     font-family: Georgia, serif;
+    padding: 30px;
 }
 
 .app {
-    width: min(90%, 500px);
-    padding: 40px;
+    width: min(92%, 850px);
+    padding: 35px;
     text-align: center;
-    background: #fffaf7;
-    border: 2px solid #d8b7aa;
-    border-radius: 30px;
+    background: #fffdfb;
+    border: 4px solid #d98da4;
+    border-radius: 35px;
+    box-shadow:
+        0 8px 0 #f2c5d2
+        0 15px 30px rgba(120, 70, 70, 0.15);
 }
 
 h1 {
-    margin-bottom: 5px;
+    margin: 0;
+    color: #d47794;
+    font-size: 48px;
+    letter-spacing: 2px 2px 0 #f7d7df
 }
 
 .subtitle {
     margin-top: 0;
     color: #9b7165;
+
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 
 .timer {
@@ -46,4 +65,36 @@ button {
 
 button:hover {
     background: #c98395;
+}
+
+.leaderboard {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #d8b7aa;
+}
+
+.leaderboard h2 {
+    margin-bottom: 15px;
+}
+
+#leaderboardList {
+    text-align: left;
+}
+
+.container::before{
+    content: "";
+    display: block;
+    height: 38px;
+
+    background:
+        radial-gradient(
+            circle at 18px 0,
+            #fffdf9 18px,
+            #f6c8d8 19px,
+            #f6c8d8 21px,
+            transparent 22px
+        );
+    background-size: 36px 36px;
+    background-position: 0 10px;
+    border-bottom: 3px solid #d96d91;
 }

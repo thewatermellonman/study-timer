@@ -1,9 +1,14 @@
 let seconds = Number(localStorage.getItem("seconds")) || 0;
 let timerInterval = null;
-let studyTime = Number(localStorage.getItem("studyTime")) || 0;
+
+let studySessions = JSON.parse(localStorage.getItem("studySessions")) || [];
+let sessionStartTime = null;
+
 let subjects = JSON.parse(localStorage.getItem("subjects")) || [];
 
 const timer = document.querySelector(".timer");
+
+const leaderboardList = document.querySelector("#leaderboardList");
 
 const startButton = document.querySelector("#startButton");
 const pauseButton = document.querySelector("#pauseButton");
@@ -35,7 +40,7 @@ addSubjectButton.addEventListener("click", function () {
 });
 
 function displaySubjects() {
-    subjectSelect.innerHTML = 'option value="">Select a subject</option>';
+    subjectSelect.innerHTML = '<option value="">Select a subject</option>';
     subjects.forEach(function (subject) {
         const option = document.createElement("option");
         option.value = subject;
@@ -61,6 +66,7 @@ startButton.addEventListener("click", function () {
         return;
     }
     if (timerInterval === null) {
+        sessionStartSeconds = seconds;
         timerInterval = setInterval(function () {
             seconds++;
             localStorage.setItem("seconds", seconds);
@@ -70,10 +76,23 @@ startButton.addEventListener("click", function () {
 });
 
 pauseButton.addEventListener("click", function () {
-    studyTime += seconds;
-    localStorage.setItem("studyTime", studyTime);
+    if (timerInterval === null) {
+        return;
+    }
+    const sessionDuration = seconds - sessionStartSeconds;
+    if (sessionDuration > 0) {
+        const session = {
+            subject: subjectSelect.value,
+            duration: sessionDuration,
+            timestamp: new Date().toISOString()
+        };
+        studySessions.push(session);
+        localStorage.setItem("studySessions", JSON.stringify(studySessions));
+        displayLeaderboard();   
+    }
     clearInterval(timerInterval);
     timerInterval = null;
+    sessionStartSeconds = null;
 });
 
 resetButton.addEventListener("click", function () {
