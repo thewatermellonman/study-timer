@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -5,37 +9,91 @@ body {
     justify-content: center;
     align-items: center;
    
-    background:
-        repeating-linear-gradient(
-            0deg,
-            #fff8f5 0px,
-            #fff8f5 28px,
-            #f7dfe3 29px,
-            #fff8f5 30px
+    background-color: #fcecf2;
+    background-image:
+        radial-gradient(#ffffff 2px, transparent 2px),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.7) 50%,
+            transparent 50%
         );
+    background-size: 34px 34px, 70px 70px;
 
-    color: #6b4a4a;
-    font-family: Georgia, serif;
-    padding: 30px;
+    color: #795b58;
+    font-family: Georgia, "Times New Roman", serif;
+    padding: 35px 20px;
 }
 
 .app {
-    width: min(92%, 850px);
-    padding: 35px;
+    position: relative;
+    width: min(94%, 900px);
+    min-height: 700px;
+    padding: 125px 45px 45px;
     text-align: center;
-    background: #fffdfb;
-    border: 4px solid #d98da4;
-    border-radius: 35px;
+    background-color: #fffdfb;
+    border: 4px solid #9b7669;
+    border-radius: 42px;
     box-shadow:
-        0 8px 0 #f2c5d2
-        0 15px 30px rgba(120, 70, 70, 0.15);
+        0 10px 0 #efb8c9,
+        0 18px 35px rgba(120, 80, 80, 0.18);
+    overflow: hidden;
+    
 }
+
+.app::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 105px;
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 78%,
+            #df8fa6 79%
+            #df8fa6 82%
+            transparent 83%
+        ),
+        repeating-linear-gradient(
+            90deg,
+            #fffdfb 0px,
+            #fffdfb 22px,
+            #f8dbe4 22px,
+            #f8dbe4 44px
+        );
+    border-bottom: 3px solid #d78da3
+}
+
+.app::after {
+    content: "";
+
+    position: absolute;
+
+    top: 76px;
+    left: 0;
+
+    width: 100%;
+    height: 35px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            #ffffff 18px,
+            transparent 19px
+        );
+
+    background-size: 42px 35px;
+
+    pointer-events: none;
+}
+
 
 h1 {
     margin: 0;
     color: #d47794;
     font-size: 48px;
-    letter-spacing: 2px 2px 0 #f7d7df
+    text-shadow: 2px 2px 0 #f7d7df;
 }
 
 .subtitle {

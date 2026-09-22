@@ -1,38 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
 
 </head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Study Timer</title>
 </head>
+
 <body>
     <main class="app">
-        <h1>Study Timer</h1>
-        <p class="subtitle">cozy study sessions</p>
-        <div class="subjectSelect">
-            <label for="subjectSelect">What are you studying</label>
+        <header class="site-header">
+            <p class="tiny-text">♡ welcome to your new study space ♡</p>
+            <h1>Study Timer</h1>
+            <p class="subtitle">cozy study sessions</p>
+        </header>
+        
+        <div class="decorative-line">
+            ✿ ─────── ♡ ─────── ✿
+        </div>
+
+        <section class="study-section">
+            <p class="section-label"
+            ✿ What are you studying? ✿
+            </p>
+        
             <select id="subjectSelect">
-                <option value="">choose your subject</option>
+                <option value="">Choose your subject</option>
             </select>
 
             <button id="addSubjectButton" type="button">
                 + Add subject
             </button>
-        </div>
-        <div class="timer">00:00:00</div>
+        </section>
 
-        <div class="buttons">
-            <button id="startButton">Start</button>
-            <button id="pauseButton">Pause</button>
-            <button id="resetButton">Reset</button>
-        </div>
+        <section class="timer-card">
+            <p class="card-title">♡ CURRENT SESSION ♡</p>
 
-        <section class="leaderboard">
-            <h2>Leaderboard</h2>
-            <div id="leaderboardList"></div>
-                <p>No study sessions yet!</p>
+            <div class="timer">
+                00:00:00
+            </div>
+
+            <div class="buttons">
+                <button id="startButton">Start</button>
+                <button id="pauseButton">Pause</button>
+                <button id="resetButton">Reset</button>
             </div>
         </section>
 
-    </main>
-    <script src="script.js"></script>
+        <section class="stats">
+            <div class="stat-card">
+                <p>♡ TODAY ♡</p>
+                <strong id="todayStat">0m</strong>
+            </div>
+
+        </section>
+
+            <div class="decorative-line">
+                ✿ ─────── ♡ ─────── ✿
+            </div>
+
+            <section class="leaderboard">
+                <h2>✿ Leaderboard ✿</h2>
+
+                <div id="leaderboardList">
+                    <p>No study sessions yet!</p>
+                </div>
+            </section>
+            
+        </main>
+
+        <script src="script.js"></script>
 </body>
+</html>
