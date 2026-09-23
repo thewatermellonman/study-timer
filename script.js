@@ -18,6 +18,7 @@ const subjectSelect = document.querySelector("#subjectSelect");
 const addSubjectButton = document.querySelector("#addSubjectButton");
 
 const todayStat = document.querySelector("#todayStat");
+const weekStat = document.querySelector("#weekStat");
 
 addSubjectButton.addEventListener("click", function () {
     const subject = prompt("What are you studying?");
@@ -135,6 +136,38 @@ function displayTodayStat() {
     }
 }
 
+function displayWeekStat() {
+    let weekSeconds = 0;
+
+    const now = new Date();
+
+    const startOfWeek = new Date(now);
+    const day = now.getDay();
+
+    startOfWeek.setDate(now.getDate() - day);
+    startOfWeek.setHours(0, 0, 0, 0);
+
+    studySessions.forEach(function (session) {
+        const sessionDate = new Date(session.timestamp);
+
+        if (sessionDate >= startOfWeek && sessionDate <= now) {
+            weekSeconds += session.duration;
+        }
+    });
+
+    const weekMinutes = Math.floor(weekSeconds / 60);
+    const weekHours = Math.floor(weekMinutes / 60);
+    const remainingMinutes = weekMinutes % 60;
+
+    if (weekHours > 0) {
+        weekStat.textContent =
+        weekHours + "h " + remainingMinutes + "m";
+    } else {
+        weekStat.textContent =
+            weekMinutes + "m";
+    }
+}
+
 startButton.addEventListener("click", function () {
     if (subjectSelect.value === "") {
         alert("choose a subject first");
@@ -183,3 +216,4 @@ updateTimer();
 displaySubjects();
 displayLeaderboard();
 displayTodayStat();
+displayWeekStat();
