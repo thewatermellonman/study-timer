@@ -62,54 +62,6 @@ body {
     overflow: visible;
 }
 
-.app::before {
-    content: "";
-
-    position: absolute;
-
-    top: 14px;
-    left: 55px;
-
-    width: 105px;
-    height: 28px;
-
-    background: rgba(250, 215, 224, 0.85);
-
-    border-left: 1px dashed #dfa0b1;
-    border-right: 1px dashed #dfa0b1;
-
-    transform: rotate(-4deg);
-
-    box-shadow:
-        0 2px 4px rgba(120, 80, 80, 0.08);
-
-    pointer-events: none;
-}
-
-.app::after {
-    content: "";
-
-    position: absolute;
-
-    top: 14px;
-    right: 55px;
-
-    width: 105px;
-    height: 28px;
-
-    background: rgba(250, 215, 224, 0.85);
-
-    border-left: 1px dashed #dfa0b1;
-    border-right: 1px dashed #dfa0b1;
-
-    transform: rotate(4deg);
-
-    box-shadow:
-        0 2px 4px rgba(120, 80, 80, 0.08);
-
-    pointer-events: none;
-}
-
 .site-header {
     position: relative;
 
@@ -125,30 +77,8 @@ body {
 
     box-shadow:
         4px 4px 0 #f7d9e1;
-}
-
-.site-header::after {
-    content: "";
-
-    position: absolute;
-
-    left: 18px;
-    right: 18px;
-
-    bottom: -11px;
-
-    height: 12px;
-
-    background:
-        radial-gradient(
-            circle at 10px 0,
-            #fffafc 9px,
-            transparent 10px
-        );
-
-    background-size: 20px 12px;
-
-    background-repeat: repeat-x;
+    
+    border-bottom: 3px dashed #e5a6b8;
 }
 
 .tiny-text {
